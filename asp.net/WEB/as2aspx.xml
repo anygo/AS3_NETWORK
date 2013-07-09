@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <model>/Bin/MODEL.dll</model>
+  <service nameSpace="BLL">/Bin/BLL.dll</service>
+  <outerResolve class=""/>
+  <outerEncrypt class=""/>
+</config>

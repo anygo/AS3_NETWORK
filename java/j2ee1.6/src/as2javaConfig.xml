@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<service package="cn.as4j.service"/>
+	<outerResolve class=""/>
+	<outerEncrypt class="cn.as4j.spring.service.Pe2"/>
+</config>
