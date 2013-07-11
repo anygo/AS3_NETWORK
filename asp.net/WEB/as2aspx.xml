@@ -2,6 +2,6 @@
 <config>
   <model>/Bin/MODEL.dll</model>
   <service nameSpace="BLL">/Bin/BLL.dll</service>
-  <outerResolve class=""/>
-  <outerEncrypt class=""/>
+  <outerResolve dll="" class=""/>
+  <outerEncrypt dll="" class=""/>
 </config>
