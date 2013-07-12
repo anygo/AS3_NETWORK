@@ -44,7 +44,26 @@ public class ContextUtil
         string serviceUrl = rootNode.SelectSingleNode("service").InnerText;
         serviceNameSpace = rootNode.SelectSingleNode("service").Attributes.GetNamedItem("nameSpace").Value;
         modelDLL = Assembly.LoadFrom(_serverPath + modelUrl);
-        serviceDLL = Assembly.LoadFrom(_serverPath + serviceUrl);        
+        serviceDLL = Assembly.LoadFrom(_serverPath + serviceUrl);
+
+        XmlAttributeCollection outerResolveXAC = rootNode.SelectSingleNode("outerResolve").Attributes;
+        string outerResolveDLL = outerResolveXAC.GetNamedItem("dll").Value;
+        string outerResolveClass = outerResolveXAC.GetNamedItem("class").Value;
+
+        XmlAttributeCollection outerEncryptXAC = rootNode.SelectSingleNode("outerEncrypt").Attributes;
+        string outerEncryptDLL = outerResolveXAC.GetNamedItem("dll").Value;
+        string outerEncryptClass = outerResolveXAC.GetNamedItem("class").Value;
+
+        if (outerResolveDLL != "" && outerResolveClass != "")
+        {
+            Type outerResolveType = Assembly.LoadFrom(_serverPath + outerResolveDLL).GetType(outerResolveClass);
+            outerResolve = (IParamResolve)System.Activator.CreateInstance(outerResolveType);
+        }
+        if (outerEncryptDLL != "" && outerEncryptClass != "")
+        {
+            Type outerEncryptType = Assembly.LoadFrom(_serverPath + outerEncryptDLL).GetType(outerEncryptClass);
+            outerEncrypt = (IParamEncrypt)System.Activator.CreateInstance(outerEncryptType);
+        }
     }
 
     /**

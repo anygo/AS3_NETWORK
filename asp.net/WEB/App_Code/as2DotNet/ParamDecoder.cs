@@ -7,6 +7,7 @@ using System.Text;
 using System.Collections;
 using System.Reflection;
 using MODEL;
+using System.Xml;
 
 namespace as2DotNet
 {
@@ -106,11 +107,14 @@ namespace as2DotNet
 		    }
 		    else if(type == ParamType.XML)
 		    {
-
+                XmlDocument doc = new XmlDocument();
+                StringReader sReader = new StringReader(readString(reader));
+                doc.Load(sReader);
+//                doc.LoadXml(readString(reader));
 		    }
 		    else if(type == ParamType.DATE)
 		    {
-
+                param = DateTime.ParseExact(readString(reader), "yyyy-MM-dd HH:mm:ss:fff", null);
 		    }
 		    else if(type == ParamType.MODEL)
 		    {
@@ -154,16 +158,15 @@ namespace as2DotNet
             return lst;
         }
 
-        public object readObject(BinaryReader reader)
+        public Hashtable readObject(BinaryReader reader)
         {
-            //Map<String, Object> map = new HashMap<String, Object>();
-            //int len = dis.readInt();
-            //for (int loop = 0; loop < len; loop++)
-            //{
-            //    map.put(dis.readUTF(), readAll(dis));
-            //}
-
-            return null;
+            Hashtable hb = new Hashtable();
+            int len = reader.ReadInt32();
+            for (int loop = 0; loop < len; loop++)
+            {
+                hb.Add(readString(reader), readAll(reader));
+            }
+            return hb;
         }
 
         public ModelBasic readModel(BinaryReader reader)
