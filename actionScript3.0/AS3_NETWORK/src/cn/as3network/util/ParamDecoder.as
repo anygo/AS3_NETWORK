@@ -72,6 +72,8 @@ package cn.as3network.util
 		 * @param stream
 		 * @return 
 		 * 
+		 * @see ParamType
+		 * @see IParamResolve
 		 */		
 		public function readAll(stream:ByteArray):*
 		{
@@ -80,7 +82,13 @@ package cn.as3network.util
 			if(type == ParamType.NULL) return null;
 			else if(_outDecoder != null && (out = _outDecoder(type, stream), out != null)) return out;
 			else if(type == ParamType.BOOLEAN) return readBoolean(stream);
+			else if(type == ParamType.BYTE) return readByte(stream);
+			else if(type == ParamType.UBYTE) return readUByte(stream);
 			else if(type == ParamType.INT) return readInt(stream);
+			else if(type == ParamType.UINT) return readUInt(stream);
+			else if(type == ParamType.USHORT) return readUShort(stream);
+			else if(type == ParamType.SHORT) return readShort(stream);
+			else if(type == ParamType.FLOAT) return readFloat(stream);
 			else if(type == ParamType.NUMBER) return readNumber(stream);
 			else if(type == ParamType.STRING) return readString(stream);
 			else if(type == ParamType.BYTE_ARRAY) return readByteArray(stream);
@@ -120,6 +128,72 @@ package cn.as3network.util
 		}
 		
 		/**
+		 * 读取  uint 类型数据
+		 * @param stream
+		 * @return 
+		 * 
+		 */		
+		public function readUInt(stream:ByteArray):uint
+		{
+			return stream.readUnsignedInt();
+		}
+		
+		/**
+		 * 读取  UShort 类型数据
+		 * @param stream
+		 * @return 
+		 * 
+		 */		
+		public function readUShort(stream:ByteArray):uint
+		{
+			return stream.readUnsignedShort();
+		}
+		
+		/**
+		 * 读取  Short 类型数据
+		 * @param stream
+		 * @return 
+		 * 
+		 */		
+		public function readShort(stream:ByteArray):int
+		{
+			return stream.readShort();
+		}
+		
+		/**
+		 * 读取  UByte 类型数据
+		 * @param stream
+		 * @return 
+		 * 
+		 */		
+		public function readUByte(stream:ByteArray):uint
+		{
+			return stream.readUnsignedByte();
+		}
+		
+		/**
+		 * 读取  Float 类型数据
+		 * @param stream
+		 * @return 
+		 * 
+		 */		
+		public function readFloat(stream:ByteArray):Number
+		{
+			return stream.readFloat();
+		}
+		
+		/**
+		 * 读取  Byte 类型数据
+		 * @param stream
+		 * @return 
+		 * 
+		 */		
+		public function readByte(stream:ByteArray):int
+		{
+			return stream.readByte()
+		}
+		
+		/**
 		 * 读取  Number 类型数据
 		 * @param stream
 		 * @return 
@@ -151,6 +225,7 @@ package cn.as3network.util
 		{
 			var len:int = stream.readInt();
 			var ba:ByteArray = new ByteArray();
+			ba.endian = _endian;
 			stream.readBytes(ba, 0, len);
 			return ba;
 		}
@@ -204,6 +279,7 @@ package cn.as3network.util
 		 * @param stream
 		 * @return 
 		 * 
+		 * @see ModelBasic
 		 */		
 		public function readModel(stream:ByteArray):ModelBasic
 		{
@@ -238,7 +314,12 @@ package cn.as3network.util
 			return obj;
 		}
 		
-		/**字节序*/
+		/**
+		 * 字节序
+		 * @return 
+		 * 
+		 * @see ByteArray.endian
+		 */	
 		public function get endian():String
 		{
 			return _endian;

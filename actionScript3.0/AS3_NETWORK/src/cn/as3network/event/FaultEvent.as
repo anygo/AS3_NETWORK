@@ -14,7 +14,7 @@ package cn.as3network.event
 	public class FaultEvent extends Event
 	{
 		/**调用后台方法异常时触发*/
-		public static const RESULT_EVENT:String = "A2JFailEvent";
+		public static const RESULT_EVENT:String = "callServerFailEvent";
 		
 		private var _message:String;
 		private var _service:String;

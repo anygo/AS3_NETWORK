@@ -84,6 +84,8 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType
+		 * @see IParamResolve
 		 */		
 		public function writeAll(param:*, stream:ByteArray):void
 		{
@@ -117,6 +119,7 @@ package cn.as3network.util
 		 * </table>
 		 * @param stream
 		 * 
+		 * @see ParamType.NULL
 		 */		
 		public function writeNull(stream:ByteArray):void
 		{
@@ -135,6 +138,7 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.BOOLEAN
 		 */		
 		public function writeBoolean(param:Boolean, stream:ByteArray):void
 		{
@@ -154,6 +158,7 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.INT
 		 */		
 		public function writeInt(param:int, stream:ByteArray):void
 		{
@@ -173,6 +178,7 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.UINT
 		 */		
 		public function writeUint(param:uint, stream:ByteArray):void
 		{
@@ -192,6 +198,7 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.STRING
 		 */		
 		public function writeString(param:String, stream:ByteArray):void
 		{
@@ -212,9 +219,11 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.BYTE_ARRAY
 		 */		
 		public function writeByteArray(param:ByteArray, stream:ByteArray):void
 		{
+			param.endian = _endian;
 			stream.writeByte(ParamType.BYTE_ARRAY);
 			stream.writeInt(param.length);
 			stream.writeBytes(param, 0, param.length);
@@ -232,6 +241,7 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.NUMBER
 		 */		
 		public function writeNumber(param:Number, stream:ByteArray):void
 		{
@@ -253,6 +263,7 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.ARRAY
 		 */		
 		public function writeArray(param:Array, stream:ByteArray):void
 		{
@@ -276,6 +287,8 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.XML
+		 * @see XML.toXMLString()
 		 */		
 		public function writeXML(param:XML, stream:ByteArray):void
 		{
@@ -295,6 +308,7 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.DATE
 		 */		
 		public function writeDate(param:Date, stream:ByteArray):void
 		{
@@ -319,6 +333,9 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.MODEL
+		 * @see ModelBasic
+		 * @see ModelBasic.getModelNameSpace()
 		 */		
 		public function writeModel(param:ModelBasic, stream:ByteArray):void
 		{
@@ -351,6 +368,7 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.DICTIONARY
 		 */		
 		public function writeDictionary(param:Dictionary, stream:ByteArray):void
 		{
@@ -371,6 +389,7 @@ package cn.as3network.util
 		 * @param param
 		 * @param stream
 		 * 
+		 * @see ParamType.OBJECT
 		 */		
 		public function writeObject(param:Object, stream:ByteArray):void
 		{
@@ -403,7 +422,12 @@ package cn.as3network.util
 			stream.position = dataPos;
 		}
 
-		/**字节序*/
+		/**
+		 * 字节序
+		 * @return 
+		 * 
+		 * @see ByteArray.endian
+		 */		
 		public function get endian():String
 		{
 			return _endian;

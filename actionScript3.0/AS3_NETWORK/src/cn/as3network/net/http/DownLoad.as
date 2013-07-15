@@ -20,6 +20,12 @@ package cn.as3network.net.http
 	 */	
 	public class DownLoad extends EventDispatcher
 	{
+		/**目标是java*/
+		public static const JAVA_SERVER:String = "/DownLoad";
+		/**目标是asp.net*/
+		public static const ASP_SERVER:String = "/DownLoad.aspx";
+		/**目标是php*/
+		public static const PHP_SERVER:String = "/DownLoad.php";
 		/**
 		 * 构造函数 
 		 * 
@@ -31,22 +37,34 @@ package cn.as3network.net.http
 		
 		/**
 		 * 下载文件 
+		 * @param serverType 服务器类型（本类提供的常量）
+		 * @param serverPath  服务器地址
+		 * @param filePath  文件地址（相对于服务器）
+		 * @param fileName  文件名（包括后缀名）
+		 * 
+		 * @see DownLoad.JAVA_SERVER
+		 * @see DownLoad.ASP_SERVER
+		 * @see DownLoad.PHP_SERVER
+		 */		
+		public static function downLoadByHTTP(serverType:String, serverPath:String, filePath:String, fileName:String):void
+		{
+			var request:URLRequest = new URLRequest();
+			request.url = encodeURI(serverPath + serverType + "?fliePath=" + filePath + "&fliename=" + fileName);
+			navigateToURL(request, "_blank");
+		}
+		
+		/**
+		 * 
+		 * @param serverType 服务器类型
 		 * @param serverPath  服务器地址
 		 * @param filePath  文件地址（相对于服务器）
 		 * @param fileName  文件名（包括后缀名）
 		 * 
 		 */		
-		public static function downLoadByHTTP(serverPath:String, filePath:String, fileName:String, isRealPath:Boolean=false):void
+		public static function downLoad(serverType:String, serverPath:String, filePath:String, fileName:String):void
 		{
 			var request:URLRequest = new URLRequest();
-			request.url = encodeURI(serverPath + "/DownLoad?fliePath=" + filePath + "&fliename=" + fileName + "&realPath=" + int(isRealPath));
-			navigateToURL(request, "_blank");
-		}
-		
-		public static function downLoad(serverPath:String, filePath:String, fileName:String, isRealPath:Boolean=false):void
-		{
-			var request:URLRequest = new URLRequest();
-			request.url = encodeURI(serverPath + "/DownLoad?fliePath=" + filePath + "&fliename=" + fileName + "&realPath=" + int(isRealPath));
+			request.url = encodeURI(serverPath + serverType +"?fliePath=" + filePath + "&fliename=" + fileName);
 			var file:FileReference = new FileReference();
 			if(fileName.indexOf(".") < 0)
 				fileName += ".zip";

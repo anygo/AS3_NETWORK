@@ -3,7 +3,7 @@ package cn.as3network.net.http
 	import flash.utils.Endian;
 
 	/**
-	 * 通信 类
+	 * asp.net通信 类
 	 * @author 破晓(QQ群:272732356)
 	 * 
 	 */	

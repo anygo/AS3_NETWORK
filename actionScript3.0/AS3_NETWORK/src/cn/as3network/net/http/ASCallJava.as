@@ -1,7 +1,7 @@
 package cn.as3network.net.http
 {
 	/**
-	 * 通信 类
+	 * java通信 类
 	 * @author 破晓(QQ群:272732356)
 	 * 
 	 */	

@@ -12,7 +12,7 @@ package cn.as3network.event
 	public class ResultEvent extends Event
 	{
 		/**调用后台方法成功时触发*/
-		public static const RESULT_EVENT:String = "A2JResultEvent";
+		public static const RESULT_EVENT:String = "callServerResultEvent";
 		
 		private var _result:DataVo;
 		

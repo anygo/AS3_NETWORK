@@ -52,6 +52,16 @@ package cn.as3network.util
 		public static const NUMBER:int = 12;
 		/**Dictionary*/
 		public static const DICTIONARY:int = 13;
+		/**uShort*/
+		public static const USHORT:int = 14;
+		/**Short*/
+		public static const SHORT:int = 15;
+		/**ubyte*/
+		public static const UBYTE:int = 16;
+		/**float*/
+		public static const FLOAT:int = 17;
+		/**byte*/
+		public static const BYTE:int = 18;
 		
 	}
 }

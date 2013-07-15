@@ -8,11 +8,11 @@ package cn.as3network.net.http
 	/**
 	 * 回调成功，返回方法调用结果 
 	 */	
-	[Event(name="A2JResultEvent", type="cn.as3network.event.ResultEvent")]
+	[Event(name="callServerResultEvent", type="cn.as3network.event.ResultEvent")]
 	/**
 	 * 方法调用失败 
 	 */	
-	[Event(name="A2JFailEvent", type="cn.as3network.event.FaultEvent")]
+	[Event(name="callServerFailEvent", type="cn.as3network.event.FaultEvent")]
 	
 	/**
 	 * 函数 
