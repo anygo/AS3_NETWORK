@@ -62,8 +62,8 @@ public class DownLoadServlet extends HttpServlet {
   @SuppressWarnings("deprecation")
   public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
-    String strFilePath = URLDecoder.decode(new String(request.getParameter("fliename").getBytes("iso-8859-1"),"utf-8"),"utf-8");
-    String serverPath = URLDecoder.decode(new String(request.getParameter("fliePath").getBytes("iso-8859-1"),"utf-8"),"utf-8");
+    String strFilePath = URLDecoder.decode(new String(request.getParameter("filename").getBytes("iso-8859-1"),"utf-8"),"utf-8");
+    String serverPath = URLDecoder.decode(new String(request.getParameter("filePath").getBytes("iso-8859-1"),"utf-8"),"utf-8");
     String sysPath = request.getRealPath("/" + serverPath + "/");
     String fullFileName = sysPath + "/" + strFilePath;
     InputStream   is=null;   
@@ -87,7 +87,7 @@ public class DownLoadServlet extends HttpServlet {
         out.println("    </b></font> </center></p> <br> <br>");
         out.println("   <center> <font color='#ff00ff' size='12'><b>");
         out.println("    <a href='/'>返回首页</a><br>");
-        out.println("    <a href='DownLoad?fliename=" + request.getParameter("fliename") + "'>重新下载</a>");
+        out.println("    <a href='DownLoad?fliename=" + request.getParameter("fileName") + "'>重新下载</a>");
         out.println("    </b></font> </center> <br>");
         out.println("  </BODY>");
         out.println("</HTML>");
@@ -97,7 +97,7 @@ public class DownLoadServlet extends HttpServlet {
 
       response.setContentType("application/force-download;charset=utf-8");
       //response.setCharacterEncoding("utf-8"); 
-      response.setHeader("Content-Disposition","attachment;filename=\"" + request.getParameter("fliename") + "\"");
+      response.setHeader("Content-Disposition","attachment;filename=\"" + request.getParameter("fileName") + "\"");
       is = new BufferedInputStream(new FileInputStream(fullFileName));   
       //定义输出字节流   
       ByteArrayOutputStream baos = new ByteArrayOutputStream();   
@@ -130,7 +130,7 @@ public class DownLoadServlet extends HttpServlet {
         out.println("    </b></font> </center> </p><br><br>");
         out.println("    <center><font color='#ff00ff' size='12'><b>");
         out.println("    <a href='/'>返回首页</a><br>");
-        out.println("    <a href='DownLoad?fliename=" + request.getParameter("fliename") + "'>重新下载</a>");
+        out.println("    <a href='DownLoad?fliename=" + request.getParameter("fileName") + "'>重新下载</a>");
         out.println("    </b></font> </center> <br>");
         out.println("  </BODY>");
         out.println("</HTML>");

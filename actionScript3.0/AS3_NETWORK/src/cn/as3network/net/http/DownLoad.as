@@ -49,7 +49,7 @@ package cn.as3network.net.http
 		public static function downLoadByHTTP(serverType:String, serverPath:String, filePath:String, fileName:String):void
 		{
 			var request:URLRequest = new URLRequest();
-			request.url = encodeURI(serverPath + serverType + "?fliePath=" + filePath + "&fliename=" + fileName);
+			request.url = encodeURI(serverPath + serverType + "?filePath=" + filePath + "&filename=" + fileName);
 			navigateToURL(request, "_blank");
 		}
 		
@@ -64,7 +64,7 @@ package cn.as3network.net.http
 		public static function downLoad(serverType:String, serverPath:String, filePath:String, fileName:String):void
 		{
 			var request:URLRequest = new URLRequest();
-			request.url = encodeURI(serverPath + serverType +"?fliePath=" + filePath + "&fliename=" + fileName);
+			request.url = encodeURI(serverPath + serverType + "?filePath=" + filePath + "&filename=" + fileName);
 			var file:FileReference = new FileReference();
 			if(fileName.indexOf(".") < 0)
 				fileName += ".zip";
