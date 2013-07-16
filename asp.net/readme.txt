@@ -1,5 +1,8 @@
 您可以使用ashx代替aspx
 
+BLL 文件夹为测试时使用，正式项目可以删掉
+MODEL/User.cs    为测试时使用，正式项目可以删掉
+
 类型对应关系
 AS         to    ASP.NET
 null,undefined     null
