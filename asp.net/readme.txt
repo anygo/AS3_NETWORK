@@ -1,3 +1,5 @@
+您可以使用ashx代替aspx
+
 类型对应关系
 AS         to    ASP.NET
 null,undefined     null
