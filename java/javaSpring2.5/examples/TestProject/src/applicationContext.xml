@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+		
+	  												
+	<bean id="topDao" class="cn.as4j.spring.impl.TopDaoImpl">
+		
+	</bean>	
+
+
+  
+  <!-- Service层配置开始 -->		
+	<bean id="topService" class="cn.as4j.spring.service.TopService">
+		<property name="topDao">
+			<ref bean="topDao"/>
+		</property>
+	</bean>
+</beans>

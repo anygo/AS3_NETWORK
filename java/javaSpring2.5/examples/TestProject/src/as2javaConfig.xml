@@ -5,5 +5,5 @@
 	<!-- 外部解析器 -->
 	<outerResolve class=""/>
 	<!-- 外部加密器 -->
-	<outerEncrypt class=""/>
+	<outerEncrypt class="cn.as4j.spring.service.Pe2"/>
 </config>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="TestAS4J_PV"
+  id="myeclipse.1373005572938"
+  context-root="/TestAS4J_PV"
+  j2ee-spec="6.0"
+  archive="TestAS4J_PV.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
