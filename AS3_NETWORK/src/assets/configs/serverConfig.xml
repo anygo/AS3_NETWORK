@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <servers defaultServer="javaServer">
+	<server id="javaServer" url="http://127.0.0.1:8080/javaserver" type="java" protocol="http">
+	   <!-- 如果前后台VO包结构或类名不一致，可以在这里配置对应关系 -->
+	  <!-- 如果VO无法实现IModelBasic接口，可以在这里配置 regular=false -->
+	   <!-- 暂不支持clientPackage和serverPackage功能 -->
+		<model clientPackage="" serverPackage="">
+			<item clientClass="com.flex.login.vo.User" regular="false" serverClass="com.vo.LoginVO"/>
+		</model>
+	</server>
+	
+	<server id="dotNetServer" url="http://127.0.0.1:8080/server/" type="dotNet" protocol="http">
+	  <!--  -->
+	   <!-- 暂不支持clientPackage和serverPackage功能 -->
+		<model clientPackage="" serverPackage="">
+			<item clientClass="com.flex.login.vo.User" serverClass="com.anxin.vo.LoginVO"/>
+		</model>
+	</server>
+  </servers>
+</config>

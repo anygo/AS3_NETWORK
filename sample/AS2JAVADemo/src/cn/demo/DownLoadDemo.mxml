@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.airmyth.net.as3network.net.http.DownLoad;
+			
+			private function downLoad():void
+			{
+				if(chk.selected)
+					DownLoad.downLoadByHTTP(DownLoad.JAVA_SERVER, txtServer.text, txtFilePath.text, txtFileName.text);
+				else
+					DownLoad.downLoad(DownLoad.JAVA_SERVER, txtServer.text, txtFilePath.text, txtFileName.text);
+			}
+		]]>
+	</fx:Script>
+	
+	<mx:Form>
+		<mx:FormItem label="服务器路径：">
+			<s:TextInput id="txtServer"  width="570" text="http://127.0.0.1:8080/TestAS4J_PV"/>
+		</mx:FormItem>
+		<mx:FormItem label="文件路径：">
+			<s:TextInput id="txtFilePath"  width="570" text="downLoad"/>
+		</mx:FormItem>
+		<mx:FormItem label="文件名：">
+			<s:TextInput id="txtFileName"  width="570" text="下载测试.rar"/>
+		</mx:FormItem>
+	</mx:Form>
+	<mx:CheckBox id="chk" x="451" y="121" label="借助浏览器下载"/>
+	<s:Button y="120" label="下载" horizontalCenter="0" click="downLoad()"/>
+	
+</mx:Canvas>

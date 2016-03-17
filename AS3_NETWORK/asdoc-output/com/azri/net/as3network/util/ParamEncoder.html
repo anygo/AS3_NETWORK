@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../../override.css" type="text/css"><meta name="keywords" content="ParamEncoder,com.azri.net.as3network.util.ParamEncoder,ARRAY,BOOLEAN,BYTE_ARRAY,BYTE,DATE,DICTIONARY,FLOAT,INT,MODEL,NULL,NUMBER,OBJECT,SHORT,STRING,UBYTE,UINT,UNFOUND,USHORT,XML,endian,endian,instance,instance,outParamEncrypt,outParamResolve,decode,decode,decrypt,destroy,destroy,encode,encode,encrypt,readAll,readArray,readBoolean,readByte,readByteArray,readDate,readFloat,readInt,readModel,readNumber,readObject,readShort,readString,readUByte,readUInt,readUShort,readXML,writeAll,writeArray,writeBoolean,writeByteArray,writeDate,writeDictionary,writeInt,writeModel,writeNull,writeNumber,writeObject,writeString,writeUint,writeXML"><title>com.azri.net.as3network.util.ParamEncoder</title></head><body><script language="javascript" type="text/javascript" src="../../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'ParamEncoder - API Documentation';
+				var baseRef = '../../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">API Documentation</td><td class="titleTableTopNav" align="right"><a href="../../../../../package-summary.html" onclick="loadClassListFrame('../../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../../class-summary.html" onclick="loadClassListFrame('../../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../../all-index-A.html" onclick="loadClassListFrame('../../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../../index.html?com/azri/net/as3network/util/ParamEncoder.html&amp;com/azri/net/as3network/util/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">ParamEncoder</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("ParamEncoder"); titleBar_setSubNav(false,true,false,false,false,false,false,false,true,false,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">com.azri.net.as3network.util</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  ParamEncoder</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">ParamEncoder  <img src="../../../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> Object</td></tr><tr><td class="classHeaderTableLabel">Implements</td><td> <a href="../../../../../com/azri/foundation/core/IDestroy.html">IDestroy</a></td></tr></table><p></p><p></p><p></p>
+	 序列化参数 
+	 <p></p><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#endian" class="signatureLink">endian</a> : String<div class="summaryTableDescription">
+		 字节序
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#instance" class="signatureLink">instance</a> : <a href="../../../../../com/azri/net/as3network/util/ParamEncoder.html">ParamEncoder</a><div class="summaryTableDescription">[static] [read-only] </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#destroy()" class="signatureLink">destroy</a>():void</div><div class="summaryTableDescription"></div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#encode()" class="signatureLink">encode</a>(value:<a href="../../../../../com/azri/net/as3network/model/DataVo.html">DataVo</a>, endian:String, outEncoder:Function = null, checkModel:Function = null, getModel:Function = null):ByteArray</div><div class="summaryTableDescription">
+		 序列化请求数据 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeAll()" class="signatureLink">writeAll</a>(param:*, stream:ByteArray):void</div><div class="summaryTableDescription">
+		 写入 任意类型 参数 
+		 包括 :
+		 null
+		 undefined
+		 Boolean
+		 int
+		 uint
+		 String
+		 ByteArray
+		 Number
+		 Array
+		 Vector
+		 XML
+		 Date
+		 ModelBasic
+		 Dictionary
+		 Object 
+		 通过IParamResolve接口构建的自定义类型
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeArray()" class="signatureLink">writeArray</a>(param:Array, stream:ByteArray):void</div><div class="summaryTableDescription">
+		 写入 Array 类型参数
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.ARRAY
+		 Array长度Doubleparam.length
+		 参数值[＊, ＊, ＊...][item, item, item...]
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeBoolean()" class="signatureLink">writeBoolean</a>(param:Boolean, stream:ByteArray):void</div><div class="summaryTableDescription">
+		 写入  Boolean 类型参数
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.BOOLEAN
+		 参数值Booleanparam
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeByteArray()" class="signatureLink">writeByteArray</a>(param:ByteArray, stream:ByteArray):void</div><div class="summaryTableDescription">
+		  写入 ByteArray 类型参数
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.BYTE_ARRAY
+		 ByteArray长度intparam.length
+		 参数值ByteArrayparam
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeDate()" class="signatureLink">writeDate</a>(param:Date, stream:ByteArray):void</div><div class="summaryTableDescription">
+		  写入 Date 类型参数
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.DATE
+		 参数值String格式：YYYY-MM-DD HH:min:ss:ms
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeDictionary()" class="signatureLink">writeDictionary</a>(param:Dictionary, stream:ByteArray):void</div><div class="summaryTableDescription">
+		  写入 Dictionary 类型参数
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.DICTIONARY
+		 属性个数int
+		 参数值[{String, ＊}...][{key, value}...]
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeInt()" class="signatureLink">writeInt</a>(param:int, stream:ByteArray):void</div><div class="summaryTableDescription">
+		 写入 int 类型参数 
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.INT
+		 参数值intparam
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeModel()" class="signatureLink">writeModel</a>(param:Object, stream:ByteArray):void</div><div class="summaryTableDescription">
+		 写入 Model 类型参数 
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.MODEL
+		 后台对应类Stringparam.getModelNameSpace()
+		 属性个数int
+		 参数值[{String, ＊}...][{key, value}...]
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeNull()" class="signatureLink">writeNull</a>(stream:ByteArray):void</div><div class="summaryTableDescription">
+		 写入 null （当值为 null 或 undefined 时） 
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.NULL
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeNumber()" class="signatureLink">writeNumber</a>(param:Number, stream:ByteArray):void</div><div class="summaryTableDescription">
+		  写入 Number 类型参数
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.NUMBER
+		 参数值Doubleparam
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeObject()" class="signatureLink">writeObject</a>(param:Object, stream:ByteArray):void</div><div class="summaryTableDescription">
+		  写入 Object 类型参数
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.OBJECT
+		 属性个数int
+		 参数值[{String, ＊}...][{key, value}...]
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeString()" class="signatureLink">writeString</a>(param:String, stream:ByteArray):void</div><div class="summaryTableDescription">
+		  写入 String 类型参数
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.STRING
+		 参数值Stringparam
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeUint()" class="signatureLink">writeUint</a>(param:uint, stream:ByteArray):void</div><div class="summaryTableDescription">
+		  写入 uint 类型参数
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.UINT
+		 参数值intparam
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#writeXML()" class="signatureLink">writeXML</a>(param:XML, stream:ByteArray):void</div><div class="summaryTableDescription">
+		  写入 XML 类型参数
+		  
+		 结构如下:
+		 
+		 名称类型值
+		 参数类型ByteParamType.XML
+		 参数值Stringparam.toXMLString()
+		 
+		 </div></td><td class="summaryTableOwnerCol">ParamEncoder</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="endian"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">endian</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>endian:String</code><p></p><p></p><p>
+		 字节序
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get endian():String</code><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function set endian(value:String):void</code><br/><p><span class="label">See also</span></p><div class="seeAlso">ByteArray.endian</div></div><a name="propertyDetail"></a><a name="instance"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">instance</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>instance:<a href="../../../../../com/azri/net/as3network/util/ParamEncoder.html">ParamEncoder</a></code>&nbsp;&nbsp;[read-only] <p></p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public static function get instance():<a href="../../../../../com/azri/net/as3network/util/ParamEncoder.html">ParamEncoder</a></code><br/></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="destroy()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">destroy</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public function destroy():void</code><p></p></div><a name="encode()"></a><a name="encode(com.azri.net.as3network.model.DataVo,String,Function,Function,Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">encode</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function encode(value:<a href="../../../../../com/azri/net/as3network/model/DataVo.html">DataVo</a>, endian:String, outEncoder:Function = null, checkModel:Function = null, getModel:Function = null):ByteArray</code><p></p><p></p><p>
+		 序列化请求数据 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">value</span>:<a href="../../../../../com/azri/net/as3network/model/DataVo.html">DataVo</a></code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">endian</span>:String</code> (default = <code>NaN</code>)<code></code> &mdash; 字节序
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">outEncoder</span>:Function</code> (default = <code>null</code>)<code></code> &mdash;  外部编码器
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">checkModel</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; 校验数据是否为Model实体的方法
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">getModel</span>:Function</code> (default = <code>null</code>)<code></code> &mdash;  根据实例获取Model类名的方法
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>ByteArray</code> &mdash; 
+		 
+		 </td></tr></table></div><a name="writeAll()"></a><a name="writeAll(any,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeAll</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeAll(param:*, stream:ByteArray):void</code><p></p><p></p><p>
+		 写入 任意类型 参数 
+		 包括 :
+		 <li>null</li>
+		 <li>undefined</li>
+		 <li>Boolean</li>
+		 <li>int</li>
+		 <li>uint</li>
+		 <li>String</li>
+		 <li>ByteArray</li>
+		 <li>Number</li>
+		 <li>Array</li>
+		 <li>Vector</li>
+		 <li>XML</li>
+		 <li>Date</li>
+		 <li>ModelBasic</li>
+		 <li>Dictionary</li>
+		 <li>Object </li>
+		 <li>通过IParamResolve接口构建的自定义类型</li>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:*</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso"><a href="ParamType.html" target="">ParamType</a><br/><a href="IParamResolve.html" target="">IParamResolve</a></div></div><a name="writeArray()"></a><a name="writeArray(Array,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeArray</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeArray(param:Array, stream:ByteArray):void</code><p></p><p></p><p>
+		 写入 Array 类型参数
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.ARRAY</td></tr><tr><td>Array长度</td><td>Double</td><td>param.length</td></tr><tr><td>参数值</td><td>[＊, ＊, ＊...]</td><td>[item, item, item...]</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:Array</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.ARRAY</div></div><a name="writeBoolean()"></a><a name="writeBoolean(Boolean,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeBoolean</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeBoolean(param:Boolean, stream:ByteArray):void</code><p></p><p></p><p>
+		 写入  Boolean 类型参数
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.BOOLEAN</td></tr><tr><td>参数值</td><td>Boolean</td><td>param</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:Boolean</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.BOOLEAN</div></div><a name="writeByteArray()"></a><a name="writeByteArray(flash.utils.ByteArray,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeByteArray</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeByteArray(param:ByteArray, stream:ByteArray):void</code><p></p><p></p><p>
+		  写入 ByteArray 类型参数
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.BYTE_ARRAY</td></tr><tr><td>ByteArray长度</td><td>int</td><td>param.length</td></tr><tr><td>参数值</td><td>ByteArray</td><td>param</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:ByteArray</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.BYTE_ARRAY</div></div><a name="writeDate()"></a><a name="writeDate(Date,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeDate</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeDate(param:Date, stream:ByteArray):void</code><p></p><p></p><p>
+		  写入 Date 类型参数
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.DATE</td></tr><tr><td>参数值</td><td>String</td><td>格式：YYYY-MM-DD HH:min:ss:ms</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:Date</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.DATE</div></div><a name="writeDictionary()"></a><a name="writeDictionary(flash.utils.Dictionary,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeDictionary</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeDictionary(param:Dictionary, stream:ByteArray):void</code><p></p><p></p><p>
+		  写入 Dictionary 类型参数
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.DICTIONARY</td></tr><tr><td>属性个数</td><td>int</td><td></td></tr><tr><td>参数值</td><td>[{String, ＊}...]</td><td>[{key, value}...]</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:Dictionary</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.DICTIONARY</div></div><a name="writeInt()"></a><a name="writeInt(int,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeInt</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeInt(param:int, stream:ByteArray):void</code><p></p><p></p><p>
+		 写入 int 类型参数 
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.INT</td></tr><tr><td>参数值</td><td>int</td><td>param</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:int</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.INT</div></div><a name="writeModel()"></a><a name="writeModel(Object,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeModel</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeModel(param:Object, stream:ByteArray):void</code><p></p><p></p><p>
+		 写入 Model 类型参数 
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.MODEL</td></tr><tr><td>后台对应类</td><td>String</td><td>param.getModelNameSpace()</td></tr><tr><td>属性个数</td><td>int</td><td></td></tr><tr><td>参数值</td><td>[{String, ＊}...]</td><td>[{key, value}...]</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:Object</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.MODEL<br/>ModelBasic<br/>ModelBasic.getModelNameSpace()</div></div><a name="writeNull()"></a><a name="writeNull(flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeNull</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeNull(stream:ByteArray):void</code><p></p><p></p><p>
+		 写入 null （当值为 null 或 undefined 时） 
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.NULL</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.NULL</div></div><a name="writeNumber()"></a><a name="writeNumber(Number,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeNumber</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeNumber(param:Number, stream:ByteArray):void</code><p></p><p></p><p>
+		  写入 Number 类型参数
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.NUMBER</td></tr><tr><td>参数值</td><td>Double</td><td>param</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:Number</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.NUMBER</div></div><a name="writeObject()"></a><a name="writeObject(Object,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeObject</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeObject(param:Object, stream:ByteArray):void</code><p></p><p></p><p>
+		  写入 Object 类型参数
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.OBJECT</td></tr><tr><td>属性个数</td><td>int</td><td></td></tr><tr><td>参数值</td><td>[{String, ＊}...]</td><td>[{key, value}...]</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:Object</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.OBJECT</div></div><a name="writeString()"></a><a name="writeString(String,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeString</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeString(param:String, stream:ByteArray):void</code><p></p><p></p><p>
+		  写入 String 类型参数
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.STRING</td></tr><tr><td>参数值</td><td>String</td><td>param</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:String</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.STRING</div></div><a name="writeUint()"></a><a name="writeUint(uint,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeUint</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeUint(param:uint, stream:ByteArray):void</code><p></p><p></p><p>
+		  写入 uint 类型参数
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.UINT</td></tr><tr><td>参数值</td><td>int</td><td>param</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:uint</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.UINT</div></div><a name="writeXML()"></a><a name="writeXML(XML,flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">writeXML</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function writeXML(param:XML, stream:ByteArray):void</code><p></p><p></p><p>
+		  写入 XML 类型参数
+		  
+		 结构如下:
+		 <table ><tr><td></td><td></td><td></td></tr><tr><td>参数类型</td><td>Byte</td><td>ParamType.XML</td></tr><tr><td>参数值</td><td>String</td><td>param.toXMLString()</td></tr></table>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">param</span>:XML</code></td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">stream</span>:ByteArray</code></td></tr></table></p><p><span class="label">See also</span></p><div class="seeAlso">ParamType.XML<br/>XML.toXMLString()</div></div><br/><br/><hr><br/><p></p><center class="copyright"><footer></footer><br/>Mon Jun 15 2015, 05:42 PM +08:00  </center></div></body></html><!--<br/>Mon Jun 15 2015, 05:42 PM +08:00  -->

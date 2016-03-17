@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:s="library://ns.adobe.com/flex/spark" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:net="com.airmyth.net.as3network.net.http.*">
+	
+	<fx:Script>
+		<![CDATA[
+			import com.airmyth.net.as3network.NetWorkFactory;
+			import com.airmyth.net.as3network.event.NetFaultEvent;
+			import com.airmyth.net.as3network.event.NetResultEvent;
+			
+			import mx.controls.Alert;
+      
+			
+			
+			private function login():void
+			{
+				var user:User = new User();
+				user.username = txtUsername.text;
+				user.password = txtPassword.text;
+				
+				call.getMethod("login").send([user]);
+			}
+			
+			private function resultHandler(event:NetResultEvent):void
+			{
+				var user:User = event.result.result as User;
+				
+				lab.text = "欢迎 " + user.nickName + "登录";
+			}
+			
+			private function failHandler(event:NetFaultEvent):void
+			{
+				Alert.show(event.fault.toString());
+			}
+    ]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<net:ASCallPHP id="call" server="{NetWorkFactory.getInstance().getServer()}"  serviceName="LoginService" fault="failHandler(event)">
+			<net:methods>
+				<net1:Method name="login" result="resultHandler(event)"/>
+			</net:methods>
+		</net:ASCallPHP>
+	</fx:Declarations>
+	<mx:VBox horizontalAlign="center">
+		<mx:Form>
+			<mx:FormItem label="服务器路径：">
+				<s:TextInput id="txtServer"  width="570" text="http://localhost:8011"/>
+			</mx:FormItem>
+			<mx:FormItem label="用户名：">
+				<s:TextInput id="txtUsername"  width="200"/>
+			</mx:FormItem>
+			<mx:FormItem label="密码：">
+				<s:TextInput id="txtPassword"  width="200"/>
+			</mx:FormItem>
+		</mx:Form>
+		
+		<s:Button id="btnLogin" label="登录" click="login()"/>
+		<s:Label id="lab"/>
+		
+	</mx:VBox>
+</mx:Canvas>

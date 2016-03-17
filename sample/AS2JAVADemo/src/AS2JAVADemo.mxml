@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+                       xmlns:s="library://ns.adobe.com/flex/spark" 
+                       xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:demo="cn.demo.*">
+  <fx:Declarations>
+    <!-- 将非可视元素（例如服务、值对象）放在此处 -->
+  </fx:Declarations>
+  
+  <mx:TabNavigator width="95%" height="95%" horizontalCenter="0" verticalCenter="0">
+    <s:NavigatorContent width="100%" height="100%" label="下载">
+      <demo:DownLoadDemo width="100%" height="100%"/>
+    </s:NavigatorContent>
+    <s:NavigatorContent width="100%" height="100%" label="上传">
+      <demo:UpLoadDemo width="100%" height="100%"/>
+    </s:NavigatorContent>
+    <s:NavigatorContent width="100%" height="100%" label="通信(Model 数据交互)">
+      <demo:HTTPConnectionDemo width="100%" height="100%"/>
+    </s:NavigatorContent>
+    <s:NavigatorContent width="100%" height="100%" label="通信(无参函数调用)">
+      <demo:HTTPConnectionDemo1 width="100%" height="100%"/>
+    </s:NavigatorContent>
+    <s:NavigatorContent width="100%" height="100%" label="通信(自定义解析类型)">
+      <demo:HTTPConnectionDemo2 width="100%" height="100%"/>
+    </s:NavigatorContent>
+    <s:NavigatorContent width="100%" height="100%" label="主动设置参数类型">
+      <demo:HTTPConnectionDemo4 width="100%" height="100%"/>
+    </s:NavigatorContent>
+    <s:NavigatorContent width="100%" height="100%" label="往HTTP头里面写入数据">
+      <demo:HTTPConnectionDemo3 width="100%" height="100%"/>
+    </s:NavigatorContent>
+    <!--<s:NavigatorContent width="100%" height="100%" label="与PHP通信">
+      <demo:CallPHPDemo width="100%" height="100%"/>
+    </s:NavigatorContent>-->
+  </mx:TabNavigator>
+</s:WindowedApplication>

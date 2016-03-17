@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:s="library://ns.adobe.com/flex/spark" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:net="com.airmyth.net.as3network.net.http.*">
+	
+	<fx:Script>
+		<![CDATA[
+			import com.airmyth.net.as3network.NetWorkFactory;
+			import com.airmyth.net.as3network.event.NetFaultEvent;
+			import com.airmyth.net.as3network.event.NetResultEvent;
+			
+			import mx.controls.Alert;
+      
+			
+			
+			private function sum():void
+			{				
+				call.getMethod("getSum").send([int(txt1.text), Number(txt2.text)], null, null, ["int", "Number"]);
+			}
+			
+			private function resultHandler(event:NetResultEvent):void
+			{
+				lab.text = event.result.result;
+			}
+			
+			private function failHandler(event:NetFaultEvent):void
+			{
+				Alert.show(event.fault.toString());
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<net:ASCallJava id="call" server="{NetWorkFactory.getInstance().getServer()}"  serviceName="TopService" fault="failHandler(event)">
+			<net:methods>
+				<net:Method name="getSum" result="resultHandler(event)"/>
+			</net:methods>
+		</net:ASCallJava>
+	</fx:Declarations>
+	<mx:VBox horizontalAlign="center">
+		<mx:Form>
+			<mx:FormItem label="加数：">
+				<s:TextInput id="txt1"  width="200"/>
+			</mx:FormItem>
+			<mx:FormItem label="加数：">
+				<s:TextInput id="txt2"  width="200"/>
+			</mx:FormItem>
+		</mx:Form>
+		
+		<s:Button id="btnLogin" label="计算" click="sum()"/>
+		<s:Label id="lab"/>
+		
+	</mx:VBox>
+</mx:Canvas>

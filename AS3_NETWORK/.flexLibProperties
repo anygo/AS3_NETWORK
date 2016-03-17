@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="com.azri.net.as3network.event.NetResultEvent"/>
+    <classEntry path="com.azri.net.as3network.net.IInvoker"/>
+    <classEntry path="com.azri.net.as3network.model.Server"/>
+    <classEntry path="com.azri.net.as3network.model.ProtocolAndServer"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>

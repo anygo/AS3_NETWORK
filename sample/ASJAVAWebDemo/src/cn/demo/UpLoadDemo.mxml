@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:net="com.azri.net.as3network.net.http.*">
+	<fx:Declarations>
+		<net:UpLoad id="upLoadTool" serverPath="{txtServer.text}" serverType="{UpLoad.JAVA_SERVER}"
+					uploadFileSelected="selectedFileHandler(event)"
+					uploadFileProgress="progressHandler(event)"
+					uploadFileComplete="upLoadSuccessHandler(event)"
+					uploadFileError="upLoadErrorHandler(event)"/>
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+      import com.azri.net.as3network.event.UploadEvent;
+      
+      import mx.controls.Alert;
+			
+			
+			
+			private function applyInfo():void
+			{				
+				upLoadTool.serverPath = txtServer.text;
+				upLoadTool.folderName = txtFilePath.text;
+				if(!chkUseName.selected)
+				{
+					upLoadTool.fileName = txtFileName.text;
+				}
+			}
+			
+			private function selectedFile():void
+			{
+				if(upLoadTool == null)
+				{
+					Alert.show("请设置服务器信息", "警告");
+					return;
+				}
+				var filter:FileFilter = new FileFilter("Images (*.jpg, *.gif, *.bmp, *.jpeg, *.png)", "*.jpg;*.gif;*.bmp;*.jpeg;*.png");
+				upLoadTool.selectFile();
+			}
+			
+			private function  upLoadFile():void
+			{
+				upLoadTool.upLoad();
+				
+				btnUpLoad.enabled = false;
+			}
+			
+			private function selectedFileHandler(event:UploadEvent):void
+			{
+				var f:FileReference = event.data.file as FileReference;
+				if(chkUseName.selected)
+				{
+					txtFileName.text = f.name;
+				}
+				
+				txtClientPath.text = f.name;
+				
+				btnUpLoad.enabled = true;
+			}
+			
+			private function progressHandler(event:UploadEvent):void
+			{
+				var progress:ProgressEvent = event.data.progress as ProgressEvent;
+				labInfo.text = "上传： " +  (progress.bytesLoaded / progress.bytesTotal)   + "(共 " + progress.bytesTotal + " 字节， 已上传 " + progress.bytesLoaded + " 字节)";
+			}
+			
+			private function upLoadSuccessHandler(event:UploadEvent):void
+			{
+				btnSelect.enabled = true;
+				btnUpLoad.enabled = false;
+				txtClientPath.text = "";
+				if(chkUseName.selected)
+				{
+					txtFileName.text = "";
+				}
+				
+				labInfo.text = "上传完毕";
+			}
+			
+			private function upLoadErrorHandler(event:UploadEvent):void
+			{
+				labInfo.text = (event.data.error as IOErrorEvent).toString();
+				btnSelect.enabled = true;
+				btnUpLoad.enabled = false;
+				
+				txtClientPath.text = "";
+				if(chkUseName.selected)
+				{
+					txtFileName.text = "";
+				}
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<mx:VBox horizontalAlign="center">
+		<mx:Form>
+			<mx:FormItem label="服务器路径：">
+				<s:TextInput id="txtServer"  width="570" text="http://127.0.0.1:8080/TestAS4J_PV"/>
+			</mx:FormItem>
+			<mx:FormItem label="文件路径：">
+				<s:TextInput id="txtFilePath"  width="570" text="upLoad"/>
+			</mx:FormItem>
+			<mx:FormItem label="文件名：" direction="horizontal">
+				<s:CheckBox id="chkUseName" label="使用默认名" selected="true"/>
+				<s:TextInput id="txtFileName"  width="400" editable="{!chkUseName.selected}"/>
+			</mx:FormItem>
+		</mx:Form>
+		
+		<s:Button label="应用" click="applyInfo()"/>
+		
+		<s:Spacer height="100"/>
+		
+		<mx:HBox width="100%" horizontalAlign="center">
+			<s:TextInput id="txtClientPath" width="520" toolTip="{txtClientPath.text}" editable="false"/>
+			<s:Button id="btnSelect" label="选择" click="selectedFile()"/>
+			<s:Button id="btnUpLoad" label="上传" click="upLoadFile()" enabled="false"/>
+		</mx:HBox>
+		
+		<s:Label id="labInfo" width="500" horizontalCenter="0" textAlign="center"/>
+	</mx:VBox>
+</mx:Canvas>

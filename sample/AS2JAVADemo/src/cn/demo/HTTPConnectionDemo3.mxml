@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:s="library://ns.adobe.com/flex/spark" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" xmlns:net="com.airmyth.net.as3network.net.http.*">
+	
+	<fx:Script>
+		<![CDATA[
+			import com.airmyth.net.as3network.NetWorkFactory;
+			import com.airmyth.net.as3network.event.NetFaultEvent;
+			import com.airmyth.net.as3network.event.NetResultEvent;
+			
+			import mx.controls.Alert;
+			
+			import test.module.TestVo;
+      
+			
+			
+			private function testHead():void
+			{
+				var tvo:TestVo = new TestVo();
+				
+				
+				call.getMethod("testHead").send([tvo], resultHandler, failHandler, null, {tokenHead:"APPHead"});
+			}
+			
+			private function resultHandler(event:NetResultEvent):void
+			{
+				var tvo:TestVo = event.result.result as TestVo;
+				
+				lab.text = tvo.test;
+			}
+			
+			private function failHandler(event:NetFaultEvent):void
+			{
+				Alert.show(event.fault.toString());
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<net:ASCallJava id="call" server="{NetWorkFactory.getInstance().getServer()}"  serviceName="TopService">
+			<net:methods>
+				<net:Method name="testHead"/>
+			</net:methods>
+		</net:ASCallJava>
+	</fx:Declarations>
+	<mx:VBox horizontalAlign="center">
+		<s:Button id="btnLogin" label="send" click="testHead()"/>
+		<s:Label id="lab"/>
+	</mx:VBox>
+</mx:Canvas>

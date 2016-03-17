@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:s="library://ns.adobe.com/flex/spark" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" 
+		   xmlns:net="com.azri.net.as3network.net.http.*">
+	<fx:Declarations>
+		<net:ASCallJava id="call" server="{NetWorkFactory.getInstance().getServer()}"  serviceName="TopService">
+			<net:methods>
+				<net:Method name="getList" result="resultHandler(event)" fault="failHandler(event)"/>
+			</net:methods>
+		</net:ASCallJava>
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+      import com.azri.net.as3network.NetWorkFactory;
+      import com.azri.net.as3network.event.NetFaultEvent;
+      import com.azri.net.as3network.event.NetResultEvent;
+      
+      import mx.collections.ArrayCollection;
+      import mx.controls.Alert;
+			[Bindable]
+			private var arr:ArrayCollection = new ArrayCollection([
+				{name:"aaa" ,size:"1"},
+				{name:"bbb" ,size:"1"},
+				{name:"ccc" ,size:"1"},
+				{name:"ddd" ,size:"1"},
+				{name:"eee" ,size:"1"},
+				{name:"fff" ,size:"1"}
+			]);
+			
+			
+			
+			private function callTest():void
+			{
+				call.outerResolve = new EncoderArrayCollection();
+				
+				call.send("getList", [arr]);
+			}
+			
+			private function resultHandler(event:NetResultEvent):void
+			{
+				arr = event.result.result as ArrayCollection;
+			}
+			
+			private function failHandler(event:NetFaultEvent):void
+			{
+				Alert.show(event.fault.toString());
+			}
+		]]>
+	</fx:Script>
+	
+	<mx:VBox horizontalAlign="center">
+		
+		<s:Button label="发送" click="callTest()"/>
+		<mx:DataGrid dataProvider="{arr}" id="dg">
+			<mx:columns>
+				<mx:DataGridColumn dataField="name" headerText="名称"/>
+				<mx:DataGridColumn dataField="size" headerText="大小"/>
+			</mx:columns>
+		</mx:DataGrid>
+	</mx:VBox>
+</mx:Canvas>

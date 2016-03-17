@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<config>
-	<!-- service所在的包，as端访问入口，不可为空 -->
-	<service package="test.service"/>
-	<!-- 外部自定义类型解析类， 如果没有，class可以不填 -->
-	<outerResolve class="test.service.OuterResolve"/>
-	<!-- 外部自定义加密解密类， 如果没有，class可以不填 -->
-	<outerEncrypt class="test.service.OuterEncrypt"/>
-</config>

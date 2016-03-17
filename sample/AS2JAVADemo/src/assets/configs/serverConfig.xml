@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <servers defaultServer="javaServer">
+		<server id="javaServer" url="http://127.0.0.1:8080/TestAS4J_PV" type="java" protocol="http">
+			<!-- 如果前后台VO包结构或类名不一致，可以在这里配置对应关系  -->
+      <!-- 如果VO无法实现IModelBasic接口，可以在这里配置 regular=false -->
+			<model>
+				<item clientClass="cn.demo.User" regular="false" serverClass="test.module.User"/>
+			</model>
+		</server>
+		
+		<server id="springServer" url="http://127.0.0.1:8080/TestAS2Spring/" type="java" protocol="http">
+      <model>
+        <item clientClass="cn.demo.User" serverClass="test.spring.model.User"/>
+      </model>
+    </server>
+  </servers>
+</config>

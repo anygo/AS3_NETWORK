@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<config>
-  <model>/Bin/MODEL.dll</model>
-  <service nameSpace="BLL">/Bin/BLL.dll</service>
-  <!-- dll 表示dll的相对路径(如：/Bin/MODEL.dll)，如果为空表示当前位置， class 表示命名空间加类名(如：MODEL.User) -->
-  <outerResolve dll="" class=""/>
-  <outerEncrypt dll="" class=""/>
-</config>

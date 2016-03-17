@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<!-- service所在的包，as端访问入口，不可为空 cache属性为是否缓存service实例，如果为false则每次访问都会重新创建service实例-->
+	<service package="" cache="true"/>
+  <!-- 解析Bean的工厂类，需要实现com.azri.as4j.bean.IBeanFactory接口，构造函数有一个String参数（参数为配置文件相关信息）；如果为空则使用默认内置解析类; 写法请参照com.azri.as4j.bean.BaseBeanFactory -->
+  <beanFactory class="" config=""/>
+	<!-- 外部自定义类型解析类， 如果没有，class可以不填 -->
+	<outerResolve class=""/>
+	<!-- 外部自定义加密解密类， 如果没有，class可以不填 -->
+	<outerEncrypt class=""/>
+	
+	<!-- 如果VO无法实现IModelBasic接口，可以在这里配置 -->
+ 	<ModelBasic> 
+ 	   <model class=""/> 
+ 	</ModelBasic> 
+</config>

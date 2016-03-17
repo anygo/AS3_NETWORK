@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:s="library://ns.adobe.com/flex/spark" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" 
+		   xmlns:net="com.azri.net.as3network.net.http.*">
+	<fx:Declarations>
+		<net:ASCallJava id="call" server="{NetWorkFactory.getInstance().getServer()}"   serviceName="TopService" result="resultHandler(event)" fault="failHandler(event)">
+			<net:methods>
+				<net:Method id="m" name="callTest"/>
+			</net:methods>
+		</net:ASCallJava>
+	</fx:Declarations>
+	<fx:Script>
+		<![CDATA[
+      import com.azri.net.as3network.NetWorkFactory;
+      import com.azri.net.as3network.event.NetFaultEvent;
+      import com.azri.net.as3network.event.NetResultEvent;
+      
+      import mx.controls.Alert;
+			
+			private function callTest():void
+			{
+				m.send();
+			}
+			
+			private function resultHandler(event:NetResultEvent):void
+			{
+				Alert.show(event.result.result as String);
+			}
+			
+			private function failHandler(event:NetFaultEvent):void
+			{
+				Alert.show(event.fault.toString());
+			}
+		]]>
+	</fx:Script>
+	
+	<mx:VBox horizontalAlign="center">
+		
+		<s:Button label="发送" click="callTest()"/>
+	</mx:VBox>
+</mx:Canvas>

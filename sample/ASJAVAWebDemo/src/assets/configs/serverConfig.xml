@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <servers defaultServer="javaServer">
+		<server id="javaServer" url="http://127.0.0.1:8080/TestAS4J_PV" type="java" protocol="http">
+			<model>
+				<item clientClass="cn.demo.User" regular="false" serverClass="com.azri.module.test.vo.User"/>
+			</model>
+		</server>
+		
+		<server id="springServer" url="http://127.0.0.1:8080/TestAS2Spring/" type="java" protocol="http">
+      <model>
+        <item clientClass="cn.demo.User" serverClass="test.spring.model.User"/>
+      </model>
+    </server>
+  </servers>
+</config>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <!-- service所在的包，as端访问入口，不可为空 cache属性为是否缓存service实例，如果为false则每次访问都会重新创建service实例-->
+  <service package="" cache="true"/>
+  <!-- Spring 配置文件 -->
+	<beanFactory class="com.azri.as4j.bean.AS2JAVABeanFactory" config="applicationContext.xml"/>
+	<!-- 外部解析器 -->
+	<outerResolve class=""/>
+	<!-- 外部加密器没有数据加密功能就不用填 -->
+	<outerEncrypt class="test.spring.service.Pe"/>
+</config>
